@@ -1,13 +1,13 @@
 version: '3.8'
 
 services:
-  # api:
-  #   build: ./core
-  #   container_name: api-dev
-  #   volumes:
-  #     - ./core:/app
-  #   ports:
-  #     - 4000:4000
+  api:
+    build: ./core
+    container_name: api-dev
+    volumes:
+      - ./core:/app
+    ports:
+      - 5000:5000
   ui:
     build: ./ui
     container_name: ui-dev

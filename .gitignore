@@ -1,6 +1,15 @@
+#generals
+.vscode
+*.venv
+*.env
+*__pycache__
+
 #ui 
 /ui/build
 /ui/node_modules
 /ui/package-lock.json
 /ui/.eslintcache
-*.env
+
+#core
+/core/*.venv
+/core/.pytest_cache
