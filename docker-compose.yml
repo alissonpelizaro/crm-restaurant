@@ -2,16 +2,22 @@ version: '3.8'
 
 services:
   api:
-    build: ./core
-    container_name: api-dev
+    build:
+      context: ./core
+    container_name: crm-api
     volumes:
-      - ./core:/app
+      - ./core:/usr/app
     ports:
       - 5000:5000
   ui:
     build: ./ui
-    container_name: ui-dev
+    command: npm start
+    container_name: crm-app
+    environment:
+      - WATCHPACK_POLLING=true
+      - CHOKIDAR_USEPOLLING=true
     volumes:
-      - ./src:/public
+      - ./ui:/app
+      - '/app/node_modules'
     ports:
       - 3000:3000

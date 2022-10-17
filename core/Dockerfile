@@ -1,7 +1,9 @@
 # syntax=docker/dockerfile:1
 FROM python:3.7-alpine
 
-WORKDIR /app
+RUN mkdir -p /usr/app
+WORKDIR /usr/app
+ENV FLASK_DEBUG 1
 
 COPY . .
 RUN pip install -r requirements.txt

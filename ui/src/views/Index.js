@@ -46,7 +46,7 @@ import {
   chartExample2
 } from "variables/charts.js";
 
-import Header from "components/Headers/Header.js";
+import HeaderCards from "components/Headers/HeaderCards.js";
 
 const Index = (props) => {
   const [activeNav, setActiveNav] = useState(1);
@@ -63,7 +63,7 @@ const Index = (props) => {
   };
   return (
     <>
-      <Header />
+      <HeaderCards />
       {/* Page content */}
       <Container className="mt--7" fluid>
         <Row>
