@@ -3,6 +3,7 @@
 *.venv
 *.env
 *__pycache__
+*.pytest_cache
 
 #ui 
 /ui/build
@@ -12,4 +13,3 @@
 
 #core
 /core/*.venv
-/core/.pytest_cache

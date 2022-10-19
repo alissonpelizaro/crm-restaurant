@@ -24,9 +24,23 @@ import {
   Col
 } from "reactstrap";
 
+import React, { useState } from "react";
+import Api from "components/Request/Api"
 import Header from "components/Headers/Header.js";
 
 const Default = (props) => {
+
+  const [data, setData] = useState();
+
+  React.useEffect(() => {
+    Api
+      .get('test')
+      .then((response) => setData(response.data))
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+  }, []);
+
   return (
     <>
       <Header />
@@ -40,7 +54,8 @@ const Default = (props) => {
                 <h3 className="mb-0">Default title</h3>
               </CardHeader>
               <CardBody>
-                <p>Conteúdo</p>
+                <p>Conteúdo - { data }</p>
+                <pre></pre>
               </CardBody>
             </Card>
           </Col>
